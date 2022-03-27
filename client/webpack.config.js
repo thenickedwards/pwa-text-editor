@@ -30,22 +30,22 @@ module.exports = () => {
       }),
       //////////
       // REF: 19.3.26 - Manifest
-      // new WebpackPwaManifest({
-      //   name: 'JATE - Just Another Text Editor',
-      //   short_name: 'J.A.T.E.',
-      //   description: 'Just Another Text Editor!',
-      //   background_color: '#7eb4e2',
-      //   theme_color: '#7eb4e2',
-      //   start_url: '/',
-      //   publicPath: '/',
-      //   icons: [
-      //     {
-      //       src: path.resolve('assets/images/logo.png'),
-      //       sizes: [96, 128, 192, 256, 384, 512],
-      //       destination: path.join('assets', 'icons'),
-      //     },
-      //   ],
-      // }),
+      new WebpackPwaManifest({
+        name: 'JATE - Just Another Text Editor',
+        short_name: 'J.A.T.E.',
+        description: 'Just Another Text Editor!',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: '/',
+        publicPath: '/',
+        icons: [
+          {
+            src: path.resolve('assets/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
       //////////
     ],
 
