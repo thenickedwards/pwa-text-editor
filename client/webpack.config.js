@@ -15,7 +15,7 @@ module.exports = () => {
       main: './src/js/index.js',
       install: './src/js/install.js',
       editor: './src/js/editor.js',
-      header: './src/js/header.js',
+      header: './src/js/header.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -35,6 +35,8 @@ module.exports = () => {
       //////////
       // REF: 19.3.26 - Manifest
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'JATE - Just Another Text Editor',
         short_name: 'J.A.T.E.',
         description: 'Just Another Text Editor!',
@@ -44,7 +46,7 @@ module.exports = () => {
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('assets/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
