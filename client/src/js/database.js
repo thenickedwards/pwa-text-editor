@@ -14,6 +14,7 @@ const initdb = async () =>
 
 // GIVEN: export const putDb = async (content) => console.error('putDb not implemented');
 // DONE: Add logic to a method that accepts some content and adds it to the database
+// REF: 19.3.24 - IndexedDB CRUD
 export const putDb = async (content) => {
   console.log('PUT to the database');
   const jate = await openDB('jate', 1);
@@ -26,6 +27,7 @@ export const putDb = async (content) => {
 
 // DONE: Add logic for a method that gets all the content from the database
 // GIVEN: export const getDb = async () => console.error('getDb not implemented');
+// REF: 19.3.24 - IndexedDB CRUD
 export const getDb = async () => {
   console.log('GET all from the database');
   const jate = await openDB('jate', 1);
