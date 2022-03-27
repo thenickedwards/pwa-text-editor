@@ -4,7 +4,7 @@ const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
+// DONE: Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
@@ -19,15 +19,15 @@ module.exports = () => {
     },
     plugins: [
       // REF: 19.2.20 - Inject Manifest
-      // new HtmlWebpackPlugin({
-      //   template: './index.html',
-      //   title: 'JATE Text Editor',
-      // }),
-      // new MiniCssExtractPlugin(),
-      // new InjectManifest({
-      //   swSrc: './src-sw.js',
-      //   swDest: 'src-sw.js',
-      // }),
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'JATE Text Editor',
+      }),
+      new MiniCssExtractPlugin(),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
       //////////
       // REF: 19.3.26 - Manifest
       // new WebpackPwaManifest({
@@ -52,24 +52,24 @@ module.exports = () => {
     module: {
       rules: [
         // Pulled 19.2.20 - Inject Manifest
-        // {
-        //   test: /\.css$/i,
-        //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        // },
-        // {
-        //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        //   type: 'asset/resource',
-        // },
-        // {
-        //   test: /\.m?js$/,
-        //   exclude: /(node_modules|bower_components)/,
-        //   use: {
-        //     loader: 'babel-loader',
-        //     options: {
-        //       presets: ['@babel/preset-env'],
-        //     },
-        //   },
-        // },
+        {
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        },
         //////////
       ],
     },
