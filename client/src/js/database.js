@@ -17,10 +17,10 @@ const initdb = async () =>
 // REF: 19.3.24 - IndexedDB CRUD
 export const putDb = async (content) => {
   console.log('PUT to the database');
-  const jate = await openDB('jate', 1);
-  const tx = jate.transaction('jate', 'readwrite');
+  const jateDB = await openDB('jate', 1);
+  const tx = jateDB.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.put({ ...content });
+  const request = store.put({ content: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 };
@@ -30,8 +30,8 @@ export const putDb = async (content) => {
 // REF: 19.3.24 - IndexedDB CRUD
 export const getDb = async () => {
   console.log('GET all from the database');
-  const jate = await openDB('jate', 1);
-  const tx = jate.transaction('jate', 'readonly');
+  const jateDB = await openDB('jate', 1);
+  const tx = jateDB.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
   const request = store.getAll();
   const result = await request;

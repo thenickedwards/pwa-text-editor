@@ -50,7 +50,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // );
 
 // WHAT'S UP WITH THIS???
-// REF: 19.3.28 Main
+// REF: 19.3.28 Mini Proj Main
 // Set up asset cache
 registerRoute(
   // Here we define the callback function that will filter the requests we want to cache (in this case, JS and CSS files)
