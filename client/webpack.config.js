@@ -27,8 +27,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        // swDest: 'src-sw.js', FIX 11/3/2023
-        swDest: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
       //////////
       // REF: 19.3.26 - Manifest
